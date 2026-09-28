@@ -33,13 +33,13 @@ export default async function NewsCategoryPage({params}) {
   return (
     <div className="container mx-auto grid grid-cols-12 gap-6 py-[60px]">
           <div className="col-span-3 ">
-            <LeftSidebar categories={categories} activeId={null} />
+            <LeftSidebar categories={categories} activeId={id} />
           </div>
-          <div className="font-bold text-3xl bg-gray-300 col-span-6">
-              <h2 className="text-3xl font-bold pb-4"> Login with</h2>
-              <div>
+          <div className=" col-span-6">
+              <h2 className="text-3xl font-bold pb-4">All News</h2>
+              <div className="flex flex-col gap-3">
                 {
-                  news.map((n)=>(<p key="n._id">{n.title}</p>))
+                  news.length > 0 ? (news.map((n)=>(<div key="n._id" className= "rounded-md border p-4">{n.title}</div>))) : (<h2 className="text-xl font-semibold">No News Found</h2>)
                 }
               </div>
       </div>
