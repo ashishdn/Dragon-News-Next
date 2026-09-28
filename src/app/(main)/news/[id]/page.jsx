@@ -1,9 +1,15 @@
 import React from 'react'
+import { getNewsById } from '../../../../lib/data';
 
-export default function NewsDetailsPage() {
+export default async function NewsDetailsPage({params}) {
+  const {id} = await params;
+  console.log(id)
+
+  const newsId = await getNewsById(id)
+  console.log(newsId.title)
   return (
     <div>
-      <h3>This ia my News Details Page</h3>
+      <h3>{newsId.title}</h3>
     </div>
   )
 }

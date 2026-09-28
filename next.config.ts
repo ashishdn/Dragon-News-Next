@@ -6,7 +6,7 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: '**', // আপনার ইমেজের ওয়েবসাইট/ডোমেইন নাম লিখুন (যেমন: images.unsplash.com)
+        hostname: '**', 
         port: '',
       },
     ],
